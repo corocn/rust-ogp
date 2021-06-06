@@ -12,4 +12,8 @@ fn main() {
 
     let thumb = img.thumbnail(200, 200);
     thumb.save("tmp/thumb.jpg").unwrap();
+
+    let font_data = include_bytes!("assets/fonts/DelaGothicOne-Regular.ttf");
+    let collection = FontCollection::from_bytes(font_data as &[u8]);
+    let font = collection.into_font().unwrap();
 }
